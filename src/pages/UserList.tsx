@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 
 // TODO2: กำหนด Type สำหรับ user
 
+interface User {
+  id: number,
+  name: string
+}
+
 const UsersList = () => {
   const users = [
     { id: 1, name: "Alice" },
@@ -13,7 +18,7 @@ const UsersList = () => {
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-3xl font-bold mb-6">Users List</h1>
       <ul className="list-none p-0">
-        {users.map((user) => (
+        {users.map((user: User) => (
           <li key={user.id} className="my-2 text-lg">
             {user.name}
           </li>
